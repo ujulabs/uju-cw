@@ -1,0 +1,30 @@
+[workspace]
+resolver = "2"
+members  = ["packages/*"]
+
+[workspace.package]
+edition     = "2021"
+repository  = "https://github.com/uju-labs/uju-cw"
+description = "A set of common packages used by Uju Labs when developing CosmWasm contracts."
+authors     = ["Tasio Victoria tasiovictoria@ujulabs.com"]
+license     = "BUSL-1.1"
+
+[workspace.dependencies]
+cosmwasm-schema = "2.1.1"
+cosmwasm-std    = "2.1.1"
+cw2             = "2.0.0"
+cw-controllers  = "2.0.0"
+cw-storage-plus = "2.0.0"
+cw-utils        = "2.0.0"
+schemars        = "0.8.21"
+serde           = "1.0.204"
+sylvia          = "1.2.1"
+thiserror       = "1.0.63"
+
+[profile.release]
+rpath            = false
+lto              = true
+overflow-checks  = true
+opt-level        = 3
+debug            = false
+debug-assertions = false
