@@ -15,4 +15,4 @@ cosmwasm-schema = { workspace = true }
 cosmwasm-std    = { workspace = true }
 cw-utils        = { workspace = true }
 thiserror       = { workspace = true }
-uju-cw2-common  = { workspace = true }
+uju-cw2-common  = { version = "0.2.0" }

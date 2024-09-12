@@ -985,6 +985,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "uju-cw2-common"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "84275cf92eb429efaa5c3fcd87e73006d2158c447e48f25cdc31b3d86bf29bad"
+dependencies = [
+ "cosmwasm-schema",
+ "cosmwasm-std",
+ "cw-utils",
+ "sha2",
+ "thiserror",
+]
+
+[[package]]
 name = "uju-cw2-nft"
 version = "0.1.0"
 dependencies = [
@@ -992,7 +1005,7 @@ dependencies = [
  "cosmwasm-std",
  "cw-utils",
  "thiserror",
- "uju-cw2-common",
+ "uju-cw2-common 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
