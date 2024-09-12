@@ -1,4 +1,4 @@
-use cosmwasm_std::StdError;
+use cosmwasm_std::{Instantiate2AddressError, StdError};
 use thiserror::Error;
 
 #[derive(Error, Debug, PartialEq)]
@@ -17,4 +17,7 @@ pub enum CommonError {
 
     #[error("InternalError: {0}")]
     InternalError(String),
+
+    #[error("{0}")]
+    Instantiate2AddressError(#[from] Instantiate2AddressError),
 }

@@ -11,15 +11,23 @@ license     = "BUSL-1.1"
 
 [workspace.dependencies]
 cosmwasm-schema = "2.1.1"
-cosmwasm-std    = "2.1.1"
-cw2             = "2.0.0"
-cw-controllers  = "2.0.0"
+cosmwasm-std = { version = "2.1.1", features = [
+    "staking",
+    "stargate",
+    "cosmwasm_1_2",
+] }
+cw2 = "2.0.0"
+cw-controllers = "2.0.0"
 cw-storage-plus = "2.0.0"
-cw-utils        = "2.0.0"
-schemars        = "0.8.21"
-serde           = "1.0.204"
-sylvia          = "1.2.1"
-thiserror       = "1.0.63"
+cw-utils = "2.0.0"
+schemars = "0.8.21"
+serde = "1.0.204"
+sha2 = "0.10"
+sylvia = "1.2.1"
+thiserror = "1.0.63"
+uju-cw2-common = { path = "packages/uju-cw2-common" }
+uju-cw2-nft = { path = "packages/uju-cw2-nft" }
+uju-index-query = { path = "packages/uju-index-query" }
 
 [profile.release]
 rpath            = false

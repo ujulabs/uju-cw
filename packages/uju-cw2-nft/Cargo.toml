@@ -1,7 +1,7 @@
 [package]
-name        = "uju-cw2-common"
-version     = "0.2.0"
-description = "A package for common utilities for CosmWasm 2.0 contracts"
+name        = "uju-cw2-nft"
+version     = "0.1.0"
+description = "A package for interacting with NFTs in CosmWasm 2.0 contracts"
 authors     = { workspace = true }
 edition     = { workspace = true }
 license     = { workspace = true }
@@ -14,5 +14,5 @@ path = "src/lib.rs"
 cosmwasm-schema = { workspace = true }
 cosmwasm-std    = { workspace = true }
 cw-utils        = { workspace = true }
-sha2            = { workspace = true }
 thiserror       = { workspace = true }
+uju-cw2-common  = { workspace = true }
