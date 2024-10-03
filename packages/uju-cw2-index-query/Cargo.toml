@@ -1,5 +1,5 @@
 [package]
-name        = "uju-index-query"
+name        = "uju-cw2-index-query"
 version     = "0.1.0"
 description = "A package for common utilities for CosmWasm 2.0 contracts"
 authors     = { workspace = true }
