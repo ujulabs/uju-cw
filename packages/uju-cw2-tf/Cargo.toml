@@ -1,0 +1,19 @@
+[package]
+name        = "uju-cw2-tf"
+version     = "0.1.0"
+description = "A package for interacting with the TokenFactory module in CosmWasm 2.0 contracts"
+authors     = { workspace = true }
+edition     = { workspace = true }
+license     = { workspace = true }
+repository  = { workspace = true }
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+cosmos-sdk-proto = { workspace = true }
+cosmwasm-schema  = { workspace = true }
+cosmwasm-std     = { workspace = true }
+cw-utils         = { workspace = true }
+prost            = { workspace = true }
+thiserror        = { workspace = true }
