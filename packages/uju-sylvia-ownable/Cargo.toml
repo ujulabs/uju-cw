@@ -1,6 +1,6 @@
 [package]
 name        = "uju-sylvia-ownable"
-version     = "0.1.1"
+version     = "0.1.2"
 description = "A package for interacting with the TokenFactory module in CosmWasm 2.0 contracts"
 authors     = { workspace = true }
 edition     = { workspace = true }
@@ -11,7 +11,7 @@ repository  = { workspace = true }
 path = "src/lib.rs"
 
 [features]
-library = []
+mt = ["sylvia/mt"]
 
 [dependencies]
 cosmwasm-schema = { workspace = true }
