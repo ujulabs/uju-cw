@@ -454,6 +454,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "cw2"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b04852cd38f044c0751259d5f78255d07590d136b8a86d4e09efdd7666bd6d27"
+dependencies = [
+ "cosmwasm-schema",
+ "cosmwasm-std",
+ "cw-storage-plus",
+ "schemars",
+ "semver",
+ "serde",
+ "thiserror",
+]
+
+[[package]]
 name = "der"
 version = "0.7.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -947,7 +962,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e9552f850d5f0964a4e4d0bf306459ac29323ddfbae05e35a7c0d35cb0803cc5"
 dependencies = [
  "anyhow",
- "itertools 0.10.5",
+ "itertools 0.13.0",
  "proc-macro2",
  "quote",
  "syn 2.0.76",
@@ -1364,6 +1379,8 @@ checksum = "e36a83ea2b3c704935a01b4642946aadd445cea40b10935e3f8bd8052b8193d6"
 [[package]]
 name = "uju-cw2-common"
 version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "84275cf92eb429efaa5c3fcd87e73006d2158c447e48f25cdc31b3d86bf29bad"
 dependencies = [
  "cosmwasm-schema",
  "cosmwasm-std",
@@ -1374,14 +1391,15 @@ dependencies = [
 
 [[package]]
 name = "uju-cw2-common"
-version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "84275cf92eb429efaa5c3fcd87e73006d2158c447e48f25cdc31b3d86bf29bad"
+version = "0.3.0"
 dependencies = [
  "cosmwasm-schema",
  "cosmwasm-std",
  "cw-utils",
+ "cw2",
+ "semver",
  "sha2",
+ "sylvia",
  "thiserror",
 ]
 
@@ -1402,7 +1420,7 @@ dependencies = [
  "cosmwasm-std",
  "cw-utils",
  "thiserror",
- "uju-cw2-common 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "uju-cw2-common 0.2.0",
 ]
 
 [[package]]

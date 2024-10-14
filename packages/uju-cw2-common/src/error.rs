@@ -6,6 +6,9 @@ pub enum CommonError {
     #[error("{0}")]
     Std(#[from] StdError),
 
+    #[error("{0}")]
+    Instantiate2AddressError(#[from] Instantiate2AddressError),
+
     #[error("Unauthorized: {0}")]
     Unauthorized(String),
 
@@ -18,6 +21,6 @@ pub enum CommonError {
     #[error("InternalError: {0}")]
     InternalError(String),
 
-    #[error("{0}")]
-    Instantiate2AddressError(#[from] Instantiate2AddressError),
+    #[error("MigrationError: {0}")]
+    MigrationError(String),
 }
