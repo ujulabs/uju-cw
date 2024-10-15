@@ -1,4 +1,4 @@
-use cosmwasm_std::{ensure, ensure_eq, Event};
+use cosmwasm_std::{ensure, ensure_eq};
 use cw2::{get_contract_version, set_contract_version, ContractVersion};
 use semver::Version;
 use sylvia::types::MigrateCtx;
@@ -9,7 +9,7 @@ pub fn handle_migration(
     ctx: MigrateCtx,
     next_name: &str,
     next_version: &str,
-) -> Result<Event, CommonError> {
+) -> Result<ContractVersion, CommonError> {
     let next_contract_version = ContractVersion {
         contract: next_name.to_string(),
         version: next_version.to_string(),
@@ -31,13 +31,9 @@ pub fn handle_migration(
 
     set_contract_version(
         ctx.deps.storage,
-        next_contract_version.contract,
-        next_contract_version.version.clone(),
+        &next_contract_version.contract,
+        &next_contract_version.version,
     )?;
 
-    let event = Event::new("migrate")
-        .add_attribute("from_version", &prev_contract_version.version)
-        .add_attribute("to_version", &next_contract_version.version);
-
-    Ok(event)
+    Ok(next_contract_version)
 }
