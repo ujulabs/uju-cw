@@ -1391,7 +1391,7 @@ dependencies = [
 
 [[package]]
 name = "uju-cw2-common"
-version = "0.3.1"
+version = "0.3.2"
 dependencies = [
  "cosmwasm-schema",
  "cosmwasm-std",

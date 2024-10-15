@@ -1,12 +1,11 @@
-use cosmwasm_std::{ensure, ensure_eq};
+use cosmwasm_std::{ensure, ensure_eq, Storage};
 use cw2::{get_contract_version, set_contract_version, ContractVersion};
 use semver::Version;
-use sylvia::types::MigrateCtx;
 
 use crate::error::CommonError;
 
 pub fn handle_migration(
-    ctx: MigrateCtx,
+    storage: &mut dyn Storage,
     next_name: &str,
     next_version: &str,
 ) -> Result<ContractVersion, CommonError> {
@@ -15,7 +14,7 @@ pub fn handle_migration(
         version: next_version.to_string(),
     };
 
-    let prev_contract_version = get_contract_version(ctx.deps.storage)?;
+    let prev_contract_version = get_contract_version(storage)?;
 
     ensure_eq!(
         prev_contract_version.contract,
@@ -30,7 +29,7 @@ pub fn handle_migration(
     );
 
     set_contract_version(
-        ctx.deps.storage,
+        storage,
         &next_contract_version.contract,
         &next_contract_version.version,
     )?;

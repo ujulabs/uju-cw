@@ -1,6 +1,6 @@
 [package]
 name        = "uju-cw2-common"
-version     = "0.3.1"
+version     = "0.3.2"
 description = "A package for common utilities for CosmWasm 2.0 contracts"
 authors     = { workspace = true }
 edition     = { workspace = true }
