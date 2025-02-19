@@ -16,6 +16,9 @@ pub enum Cw721QueryMsg {
         /// unset or false will filter out expired approvals, you must set to true to see them
         include_expired: Option<bool>,
     },
+    /// Total number of tokens issued
+    #[returns(NumTokensResponse)]
+    NumTokens {},
 }
 
 #[cw_serde]
@@ -32,4 +35,9 @@ pub struct OwnerOfResponse {
     pub owner: String,
     /// If set this address is approved to transfer/send the token as well
     pub approvals: Vec<Approval>,
+}
+
+#[cw_serde]
+pub struct NumTokensResponse {
+    pub count: u64,
 }

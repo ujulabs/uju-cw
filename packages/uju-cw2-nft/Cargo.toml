@@ -1,6 +1,6 @@
 [package]
 name        = "uju-cw2-nft"
-version     = "0.1.0"
+version     = "0.2.0"
 description = "A package for interacting with NFTs in CosmWasm 2.0 contracts"
 authors     = { workspace = true }
 edition     = { workspace = true }

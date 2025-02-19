@@ -1,7 +1,7 @@
 use cosmwasm_std::{ensure_eq, to_json_binary, Addr, QuerierWrapper, SubMsg, WasmMsg};
 use uju_cw2_common::error::CommonError;
 
-use crate::msg::{Cw721ExecuteMsg, Cw721QueryMsg, OwnerOfResponse};
+use crate::msg::{Cw721ExecuteMsg, Cw721QueryMsg, NumTokensResponse, OwnerOfResponse};
 
 /// Invoke `transfer_nft` to build a `SubMsg` to transfer an NFT to an address.
 pub fn transfer_nft(collection: &Addr, token_id: &str, recipient: &Addr) -> SubMsg {
@@ -43,4 +43,16 @@ pub fn only_owner(
         }
         Err(_) => Ok(()),
     }
+}
+
+/// Shallow validate a collection by checking that the num tokens query returns a valid response.
+pub fn shallow_validate_collection(
+    querier: &QuerierWrapper,
+    collection: &Addr,
+) -> Result<(), CommonError> {
+    querier
+        .query_wasm_smart::<NumTokensResponse>(collection.clone(), &Cw721QueryMsg::NumTokens {})
+        .map_err(|_| CommonError::InvalidInput("invalid collection address".to_string()))?;
+
+    Ok(())
 }
